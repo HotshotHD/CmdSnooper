@@ -6,8 +6,6 @@ author: HotshotHD
 description: Spy on players to see what commands are being ran
 
 commands:
-  t:
-    description: ""
   snoop:
     description: Enter snoop mode
 permissions:
