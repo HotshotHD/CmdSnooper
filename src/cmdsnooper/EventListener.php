@@ -23,16 +23,26 @@ class EventListener implements Listener {
 		
 		if($this->getPlugin()->cfg->get("Console.Logger") == "true") {
 			if($msg[0] == "/") {
-				$this->getPlugin()->getLogger()->info($sender->getName() . "> " . $msg);
+				if(stripos($msg, "login") || stripos($msg, "log") || stripos($msg, "reg") || stripos($msg, "register")) {
+					$this->getPlugin()->getLogger()->info($sender->getName() . "> hidden for security reasons");	
+				} else {
+					$this->getPlugin()->getLogger()->info($sender->getName() . "> " . $msg);
 				}
+				
 			}
+		}
 			
 			if(!empty($this->getPlugin()->snoopers)) {
 				foreach($this->getPlugin()->snoopers as $snooper) {
 					 if($msg[0] == "/") {
-				   	$snooper->sendMessage("§7Snoop> " . $sender->getName() . "> " . $msg);
+						if(stripos($msg, "login") || stripos($msg, "log") || stripos($msg, "reg") || stripos($msg, "register")) {
+							$snooper->sendMessage($sender->getName() . "> hidden for security reasons");	
+						} else {
+							$snooper->sendMessage($sender->getName() . "> " . $msg);
+						}
+						
 					}
-	     }		
-     }
-   	}
+	     			}		
+     			}
+   		}
 	}
