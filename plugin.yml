@@ -1,7 +1,7 @@
 name: CmdSnooper
 main: cmdsnooper\CmdSnooper
 version: 1.0.0
-api: [1.12.0, 1.13.0]
+api: [1.13.0, 2.0.0]
 author: HotshotHD
 description: Spy on players to see what commands are being ran
 
