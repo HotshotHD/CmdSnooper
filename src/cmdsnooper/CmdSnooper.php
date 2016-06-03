@@ -17,6 +17,8 @@ class CmdSnooper extends PluginBase {
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener($this), $this);
 		$this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML, array(
 	  	"Console.Logger" => "true",
+                "Console.HideTell" => "true",
+                "Game.HideTell" => "false"
   		));
 	}
 	
