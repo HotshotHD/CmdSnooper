@@ -7,7 +7,6 @@ use pocketmine\event\player\PlayerCommandPreprocessEvent;
 use cmdsnooper\CmdSnooper;
 
 class EventListener implements Listener {
-
     public $plugin;
 
     public function __construct(CmdSnooper $plugin) {
