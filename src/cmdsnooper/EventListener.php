@@ -39,7 +39,7 @@ class EventListener implements Listener {
 
             foreach ($this->getPlugin()->snoopers as $snooper) {
                 if ($msg[0] == "/") {
-                if (!($hasTell || (stripos($msg, "log") === 1) || (stripos($msg, "me") === 1) || (stripos($msg, "reg") === 1) || stripos($msg, "chpwd"))) {
+                    if (!($hasTell || (stripos($msg, "log") === 1) || (stripos($msg, "me") === 1) || (stripos($msg, "reg") === 1) || stripos($msg, "chpwd"))) {
                         $snooper->sendMessage($sender->getName() . " > " . $msg);
                     }
                 }
