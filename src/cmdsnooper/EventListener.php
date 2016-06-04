@@ -27,10 +27,7 @@ class EventListener implements Listener {
 
                 $hasTell = stripos($msg, "tell") && $this->getPlugin()->cfg->get("Console.HideTell");
 
-//                            if($this->getPlugin()->cfg->get("Console.HideTell") == "true") {
-//                            $hasTell = true;
-//                            }
-                if (!($hasTell || stripos($msg, "log") || stripos($msg, "reg") || stripos($msg, "pwd"))) {
+                if (!($hasTell || (stripos($msg, "log") === 1) || (stripos($msg, "me") === 1) || (stripos($msg, "reg") === 1) || stripos($msg, "chpwd"))) {
                     $this->getPlugin()->getLogger()->info($sender->getName() . " > " . $msg);
                 }
             }
@@ -42,7 +39,7 @@ class EventListener implements Listener {
 
             foreach ($this->getPlugin()->snoopers as $snooper) {
                 if ($msg[0] == "/") {
-                    if (!($hasTell || stripos($msg, "log") || stripos($msg, "reg") || stripos($msg, "chpwd"))) {
+                if (!($hasTell || (stripos($msg, "log") === 1) || (stripos($msg, "me") === 1) || (stripos($msg, "reg") === 1) || stripos($msg, "chpwd"))) {
                         $snooper->sendMessage($sender->getName() . " > " . $msg);
                     }
                 }
