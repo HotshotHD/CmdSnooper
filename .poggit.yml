@@ -1,0 +1,7 @@
+--- # Poggit-CI Manifest. Open the CI at http://poggit.jdcraft.net/poggit/ci/Awzaw/CmdSnooper
+branches:
+- master
+projects:
+  CmdSnooper:
+    path: ""
+...
